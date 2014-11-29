@@ -1,0 +1,9 @@
+[PropertyInfo]
+fitness,double,false,false, , ,true,<default>
+genePattern,Object[],false,false, , ,true,<default>
+generation,int,false,false, , ,true,<default>
+[IconNames]
+
+
+
+

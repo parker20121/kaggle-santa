@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><!--JBuilder QuickDoc-->
+<HEAD>
+<TITLE>Class BitPatternChromosome</TITLE><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+</HEAD>
+<BODY>
+
+<H2>
+<FONT SIZE="-1"></FONT>
+<BR>Class BitPatternChromosome</H2>
+<DL>
+<DT>public class <B>BitPatternChromosome</B><DT>extends BaseChromosome<DT>implements Cloneable
+</DL>
+<DL><DD><p>Title: Genetic Algorithm Framework</p> <p>Description: </p> <p>Copyright: Copyright (c) 2002</p> <p>Company: IPFW</p><DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Version:</B><DD>1.0</DD>
+<DT><B>Author:</B><DD>Nathan Parker</DD>
+</DL>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR BGCOLOR="#CCCCFF"><TD COLSPAN=1><FONT SIZE="+2">
+<B>Constructor Detail</B>
+</FONT></TD></TR></TABLE>
+
+<H3>BitPatternChromosome</H3>
+<PRE>
+public <B>BitPatternChromosome</B>(int&nbsp;nbits)</PRE>
+<DL><DD>Creates a new chromosome with a gene bit array of the specified length.<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Parameters:</B><DD><CODE>nbits</CODE> - specified bit length of the internal gene array</DD>
+</DL>
+<HR>
+
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR BGCOLOR="#CCCCFF"><TD COLSPAN=1><FONT SIZE="+2">
+<B>Method Detail</B>
+</FONT></TD></TR></TABLE>
+
+<H3>clone</H3>
+<PRE>
+public Object <B>clone</B>()</PRE>
+<DL><DD>Cloning this <code>Chromosome</code> produces a new <code>Chromosome</code> that is equal to it. The clone is a deep copy of original with the exact same mutation rate and gene pattern.<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Returns:</B><DD>reference to an exact copy of this object</DD>
+</DL>
+<HR>
+
+<H3>length</H3>
+<PRE>
+public int <B>length</B>()</PRE>
+<DL><DD>Returns the logical length of this <code>Chromosome</code>'s gene encoding. This method returns the number of bits representing the genes in this <code>Chromosome</code>.<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Returns:</B><DD>number of bits in the gene encoding</DD>
+</DL>
+<HR>
+
+<H3>toBitString</H3>
+<PRE>
+public String <B>toBitString</B>()</PRE>
+<DL><DD>Returns a bit string representing the internal gene bit array. The bit string is oriented such that gene[0] is at the rightmost end of the string and gene[n] is at the leftmost end.<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Returns:</B><DD><code>String</code> of bits represented the gene encoding</DD>
+</DL>
+<HR>
+
+<H3>toString</H3>
+<PRE>
+public String <B>toString</B>()</PRE>
+<DL><DD>Returns a string representation of this bit set. For every index for which the genes contains a bit in the set state, the decimal representation of that index is included in the result. Such indices are listed in order from lowest to highest, separated by ",&nbsp;" (a comma and a space) and surrounded by braces, resulting in the usual mathematical notation for a set of integers.<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Returns:</B><DD><code>String</code> representation of the gene encoding</DD>
+<DT><B>See Also:</B><DD>java.util.BitSet#toString()</DD>
+</DL>
+<HR>
+
+</BODY>
+</HTML>

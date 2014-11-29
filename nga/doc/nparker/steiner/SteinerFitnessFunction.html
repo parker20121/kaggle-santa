@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><!--JBuilder QuickDoc-->
+<HEAD>
+<TITLE>Class nparker.steiner.SteinerFitnessFunction</TITLE><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+</HEAD>
+<BODY>
+
+<H2>
+<FONT SIZE="-1">nparker.steiner</FONT>
+<BR>Class SteinerFitnessFunction</H2>
+<DL>
+<DT>public class <B>SteinerFitnessFunction</B><DT>implements FitnessFunction
+</DL>
+<DL><DD><p>The fitness function for <code>SteinerPointChromosome</code>s where the distances between all of the points on the unit cube and the steiner points are summed. The total distance between all of these points represents the fitness for this chromosome.</p> <p>This fitness function only works on chromosomes of class <code>SteinerPointChromosome</code>. Any other class will not get results using this fitness function since this function relies upon the particular gene pattern of the chromosome to be of a certain composition.</p><DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Version:</B><DD>1.0</DD>
+<DT><B>Author:</B><DD>Nathan Parker</DD>
+</DL>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR BGCOLOR="#CCCCFF"><TD COLSPAN=1><FONT SIZE="+2">
+<B>Field Detail</B>
+</FONT></TD></TR></TABLE>
+
+<H3>X0</H3>
+<PRE>
+private static final int <B>X0</B></PRE>
+<DL><DD>Array index of x-value of the first point.<DL><DD></DD></DL></DD>
+</DL>
+<DL></DL>
+<HR>
+
+<H3>Y0</H3>
+<PRE>
+private static final int <B>Y0</B></PRE>
+<DL><DD>Array index of the y-value of the first point.<DL><DD></DD></DL></DD>
+</DL>
+<DL></DL>
+<HR>
+
+<H3>X1</H3>
+<PRE>
+private static final int <B>X1</B></PRE>
+<DL><DD>Array index of the x-value of the second point.<DL><DD></DD></DL></DD>
+</DL>
+<DL></DL>
+<HR>
+
+<H3>Y1</H3>
+<PRE>
+private static final int <B>Y1</B></PRE>
+<DL><DD>Array index of the y-value of the second point.<DL><DD></DD></DL></DD>
+</DL>
+<DL></DL>
+<HR>
+
+<H3>COORDINATE_ZERO</H3>
+<PRE>
+private static final Float <B>COORDINATE_ZERO</B></PRE>
+<DL><DD>Represents one value for either an x-value or y-value for a coordinate on the unit square.<DL><DD></DD></DL></DD>
+</DL>
+<DL></DL>
+<HR>
+
+<H3>COORDINATE_ONE</H3>
+<PRE>
+private static final Float <B>COORDINATE_ONE</B></PRE>
+<DL><DD>Represents one value for either an x-value or y-value for a coordinate on the unit square.<DL><DD></DD></DL></DD>
+</DL>
+<DL></DL>
+<HR>
+
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR BGCOLOR="#CCCCFF"><TD COLSPAN=1><FONT SIZE="+2">
+<B>Method Detail</B>
+</FONT></TD></TR></TABLE>
+
+<H3>evaluateFitness</H3>
+<PRE>
+public double <B>evaluateFitness</B>(Chromosome&nbsp;chromosome)</PRE>
+<DL><DD>Returns the total distance between the steiner points and the points on the unit square that those points are connected to. Thus, the total distance is a measure of the fitness of the given chromosome. If the given chromosome does not have the correct connection array structure where every point is connected to a steiner point then the total distance returned will be assigned Double.POSITIVE_INFINITY. The chromsome must be a <code>SteinerPointChromsome</code> in order for it to be evaluated correctly.<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Parameters:</B><DD><CODE>chromosome</CODE> - a <code>SteinerPointChromosome</code> to be evaluated.</DD>
+<DT><B>Returns:</B><DD>the total distance between the steiner points and the points on the unit square as a measure of the fitness, or Double.POSITIVE_INFINITY if the chromosome's connection structure is in error.</DD>
+</DL>
+<HR>
+
+<H3>distance</H3>
+<PRE>
+private double <B>distance</B>(Float&nbsp;x0,
+                        Float&nbsp;y0,
+                        Float&nbsp;x1,
+                        Float&nbsp;y1)</PRE>
+<DL><DD>Returns the distance between two points whose coordinates are all represented as <code>Float</code>s.<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Parameters:</B><DD><CODE>x0</CODE> - x-value of the first point.</DD>
+<DD><CODE>y0</CODE> - y-value of the first point.</DD>
+<DD><CODE>x1</CODE> - x-value of the second point.</DD>
+<DD><CODE>y1</CODE> - y-value of the second point.</DD>
+<DT><B>Returns:</B><DD>the distance between the two specified points.</DD>
+</DL>
+<HR>
+
+</BODY>
+</HTML>

@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><!--JBuilder QuickDoc-->
+<HEAD>
+<TITLE>Class nparker.steiner.SteinerCrossover</TITLE><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+</HEAD>
+<BODY>
+
+<H2>
+<FONT SIZE="-1">nparker.steiner</FONT>
+<BR>Class SteinerCrossover</H2>
+<DL>
+<DT>public class <B>SteinerCrossover</B><DT>implements CrossoverStrategy
+</DL>
+<DL><DD>Performs single-point crossover on the selected <code>Population</code> of <code>SteinerPointChromosome</code>s and returns the resultant offspring.<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Version:</B><DD>1.0</DD>
+<DT><B>Author:</B><DD>Nathan Parker</DD>
+</DL>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR BGCOLOR="#CCCCFF"><TD COLSPAN=1><FONT SIZE="+2">
+<B>Method Detail</B>
+</FONT></TD></TR></TABLE>
+
+<H3>crossChromosomes</H3>
+<PRE>
+public Chromosome[] <B>crossChromosomes</B>(Chromosome&nbsp;parent1,
+                                     Chromosome&nbsp;parent2,
+                                     int&nbsp;crosspoint)</PRE>
+<DL><DD>Performs the crossover operation over two parents and returns their children as an array. This method performs single-point crossover on the two parents using the specified crossover point.<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Parameters:</B><DD><CODE>parent1</CODE> - the first parent for cross-breeding.</DD>
+<DD><CODE>parent2</CODE> - the second parent for cross-breeding.</DD>
+<DD><CODE>crosspoint</CODE> - the point at which genes are spliced across both parents.</DD>
+<DT><B>Returns:</B><DD>the two children of these parents as an array.</DD>
+</DL>
+<HR>
+
+<H3>crossChromosomes</H3>
+<PRE>
+public Population <B>crossChromosomes</B>(Population&nbsp;p,
+                                   Random&nbsp;rand)</PRE>
+<DL><DD>Takes the population of selected chromosomes and breeds a new population of chromosomes. The population created from the breeding is the same size as the population specified by the given selected population. The population created from the breeding contains only the children of the parents which are taken from the selected population. The random number generator is used to specify a random crossover point for each of the breeding cycles and which parent breeds with which parent.<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Parameters:</B><DD><CODE>p</CODE> - <code>Population</code> of selected chromosomes.</DD>
+<DD><CODE>rand</CODE> - random number generator used for determining crossover point and mate selection.</DD>
+<DT><B>Returns:</B><DD><code>Population</code> created from the breeding which only contains the offspring.</DD>
+</DL>
+<HR>
+
+</BODY>
+</HTML>

@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><!--JBuilder QuickDoc-->
+<HEAD>
+<TITLE>Class nparker.gapi.structure.BaseChromosome</TITLE><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+</HEAD>
+<BODY>
+
+<H2>
+<FONT SIZE="-1">nparker.gapi.structure</FONT>
+<BR>Class BaseChromosome</H2>
+<DL>
+<DT>public abstract class <B>BaseChromosome</B><DT>implements Chromosome, Comparable
+</DL>
+<DL><DD><p>Implements basic features usable by all types of chromosomes. This class contains data to track both the fitness value and generation of this chromosome. Also, this class provides concrete implementations of a few of the methods that are specified in the <code>Chromosome</code> interface. Finally, this class implements a mechanism that allows chromosomes to be compared by fitness value.</p> <p>This class should provide both structure and reinforcement for the fact that a chromosome is considered an array of objects for both programmatic and processing purposes within the context of this API and extended applications.</p><DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Version:</B><DD>1.0</DD>
+<DT><B>Author:</B><DD>Nathan Parker</DD>
+</DL>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR BGCOLOR="#CCCCFF"><TD COLSPAN=1><FONT SIZE="+2">
+<B>Field Detail</B>
+</FONT></TD></TR></TABLE>
+
+<H3>fitness</H3>
+<PRE>
+private double <B>fitness</B></PRE>
+<DL><DD>The fitness of this chromosome.<DL><DD></DD></DL></DD>
+</DL>
+<DL></DL>
+<HR>
+
+<H3>generation</H3>
+<PRE>
+private int <B>generation</B></PRE>
+<DL><DD>Represents what generation (iteration) this chromosome was created.<DL><DD></DD></DL></DD>
+</DL>
+<DL></DL>
+<HR>
+
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR BGCOLOR="#CCCCFF"><TD COLSPAN=1><FONT SIZE="+2">
+<B>Method Detail</B>
+</FONT></TD></TR></TABLE>
+
+<H3>getFitness</H3>
+<PRE>
+public double <B>getFitness</B>()</PRE>
+<DL><DD>Returns the fitness value of this chromosome.<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Returns:</B><DD>the fitness value of this chromosome.</DD>
+</DL>
+<HR>
+
+<H3>setFitness</H3>
+<PRE>
+public void <B>setFitness</B>(double&nbsp;value)</PRE>
+<DL><DD>Sets the fitness value of this chromosome to the specified value.<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Parameters:</B><DD><CODE>value</CODE> - the new fitness value.</DD>
+</DL>
+<HR>
+
+<H3>getGeneration</H3>
+<PRE>
+public int <B>getGeneration</B>()</PRE>
+<DL><DD>Returns the generation this chromosome belongs to. The generation, in our case, represents the iteration during which this chromosome was created.<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Returns:</B><DD>the generation of this chromosome.</DD>
+</DL>
+<HR>
+
+<H3>setGeneration</H3>
+<PRE>
+public void <B>setGeneration</B>(int&nbsp;gen)</PRE>
+<DL><DD>Sets the generation of this chromosome to the specified value.<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Parameters:</B><DD><CODE>gen</CODE> - the new generation value.</DD>
+</DL>
+<HR>
+
+<H3>getGenePattern</H3>
+<PRE>
+public Object[] <B>getGenePattern</B>()</PRE>
+<DL><DD>Returns the entire gene pattern of this chromosome.<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Returns:</B><DD>the entire gene patter of this chromsome as an <code>Object[]</code>.</DD>
+</DL>
+<HR>
+
+<H3>getGenePattern</H3>
+<PRE>
+public Object[] <B>getGenePattern</B>(int&nbsp;startIndex,
+                               int&nbsp;endIndex)</PRE>
+<DL><DD>Returns the gene pattern of this chromosome between <code>startIndex</code> and <code>endIndex</code>, inclusive.<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Parameters:</B><DD><CODE>startIndex</CODE> - the index of the first gene to be returned.</DD>
+<DD><CODE>endIndex</CODE> - the index of the last gene to be returned.</DD>
+<DT><B>Returns:</B><DD>the gene pattern of this chromosome as an array of <code>Object</code>s from <code>startIndex</code> to <code>endIndex</code>, inclusive.</DD>
+</DL>
+<HR>
+
+<H3>compareTo</H3>
+<PRE>
+public int <B>compareTo</B>(Object&nbsp;o)</PRE>
+<DL><DD><p>Compares this <code>BaseChromosome</code> to another <code>Object</code> for order. To determine order, the <code>Object</code> parameter is cast to a <code>Chromosome</code> and then the fitness values of this object and the parameter are compared. </p> <p>NOTE: natural ordering not consistent with equals necessarily as this only compares the fitness value of two chromosomes to designate ordering of these objects.</p><DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Parameters:</B><DD><CODE>o</CODE> - the <code>Object</code> to be compared.</DD>
+<DT><B>Returns:</B><DD>a negative integer, zero, or a positive integer as this object is less than, equal to, or greater than the specified object.</DD>
+</DL>
+<HR>
+
+</BODY>
+</HTML>

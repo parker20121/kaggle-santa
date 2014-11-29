@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><!--JBuilder QuickDoc-->
+<HEAD>
+<TITLE>Class nparker.steiner8d.Steiner8DFitnessFunction</TITLE><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+</HEAD>
+<BODY>
+
+<H2>
+<FONT SIZE="-1">nparker.steiner8d</FONT>
+<BR>Class Steiner8DFitnessFunction</H2>
+<DL>
+<DT>public class <B>Steiner8DFitnessFunction</B><DT>implements FitnessFunction
+</DL>
+<DL><DD><p>Title: Genetic Algorithm Application Programming Interface</p> <p>Description: </p> <p>Copyright: Copyright (c) 2002</p> <p>Company: IPFW</p><DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Version:</B><DD>1.0</DD>
+<DT><B>Author:</B><DD>Nathan Parker</DD>
+</DL>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR BGCOLOR="#CCCCFF"><TD COLSPAN=1><FONT SIZE="+2">
+<B>Field Detail</B>
+</FONT></TD></TR></TABLE>
+
+<H3>ptsInBounds</H3>
+<PRE>
+private Point2D.Double[] <B>ptsInBounds</B></PRE>
+<DL><DD>Contains the 8 random points that are within the unit square that we are comparing the distance between the Steiner points and these.<DL><DD></DD></DL></DD>
+</DL>
+<DL></DL>
+<HR>
+
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR BGCOLOR="#CCCCFF"><TD COLSPAN=1><FONT SIZE="+2">
+<B>Method Detail</B>
+</FONT></TD></TR></TABLE>
+
+<H3>evaluateFitness</H3>
+<PRE>
+public double <B>evaluateFitness</B>(Chromosome&nbsp;chromosome)</PRE>
+<DL><DD>Returns the total distance between the steiner points and the points on the unit square that those points are connected to. Thus, the total distance is a measure of the fitness of the given chromosome. If the given chromosome does not have the correct connection array structure where every point is connected to a steiner point then the total distance returned will be assigned Double.POSITIVE_INFINITY. The chromsome must be a <code>Steiner8DChromsome</code> in order for it to be evaluated correctly.<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Parameters:</B><DD><CODE>chromosome</CODE> - a <code>Steiner8DChromosome</code> to be evaluated.</DD>
+<DT><B>Returns:</B><DD>the total distance between the steiner points and the points on the unit square as a measure of the fitness, or Double.POSITIVE_INFINITY if the chromosome's connection structure is in error.</DD>
+</DL>
+<HR>
+
+<H3>setPoints</H3>
+<PRE>
+public void <B>setPoints</B>(Point2D.Double[]&nbsp;pts)</PRE>
+<DL><DD>Sets the points that are in bounds to those specified by the parameter. Note that because this is the <code>Steiner8DFitnessFunction</code> class, the array should contain 8 points that are within the bounds of the unit square, inclusive.<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Parameters:</B><DD><CODE>pts</CODE> - array of points to be used to solve this problem.</DD>
+</DL>
+<HR>
+
+</BODY>
+</HTML>

@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><!--JBuilder QuickDoc-->
+<HEAD>
+<TITLE>Class nparker.steiner.SteinerPointChromosome</TITLE><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+</HEAD>
+<BODY>
+
+<H2>
+<FONT SIZE="-1">nparker.steiner</FONT>
+<BR>Class SteinerPointChromosome</H2>
+<DL>
+<DT>public class <B>SteinerPointChromosome</B><DT>extends BaseChromosome
+</DL>
+<DL><DD><p>Represents a chromosome in a Steiner Point genetic algorithm problem. With this class, instead of representing the solution as a bit pattern, here it is being represented as an array of genes which are <code>Object</code>s. Specifically, each of the coordinates of the two steiner points are represented as <code>Float</code>s while each of the connections between the steiner points and the points on the unit square are represented as <code>Boolean</code>s. Thus, the composition of a given chromosome will be an array with the following composition:</p> <ol start="0"> <li>x-coordinate of the first steiner point (x<sub>0</sub>).</li> <li>y-coordinate of the first steiner point (y<sub>0</sub>).</li> <li>x-coordinate of the second steiner point (x<sub>1</sub>).</li> <li>y-coordinate of the second steiner point (y<sub>1</sub>).</li> <li>(x<sub>0</sub>, y<sub>0</sub>) connected to (0, 0).</li> <li>(x<sub>0</sub>, y<sub>0</sub>) connected to (0, 1).</li> <li>(x<sub>0</sub>, y<sub>0</sub>) connected to (1, 0).</li> <li>(x<sub>0</sub>, y<sub>0</sub>) connected to (1, 1).</li> <li>(x<sub>1</sub>, y<sub>1</sub>) connected to (0, 0).</li> <li>(x<sub>1</sub>, y<sub>1</sub>) connected to (0, 1).</li> <li>(x<sub>1</sub>, y<sub>1</sub>) connected to (1, 0).</li> <li>(x<sub>1</sub>, y<sub>1</sub>) connected to (1, 1).</li> </ol><DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Version:</B><DD>1.0</DD>
+<DT><B>Author:</B><DD>Nathan Parker</DD>
+</DL>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR BGCOLOR="#CCCCFF"><TD COLSPAN=1><FONT SIZE="+2">
+<B>Field Detail</B>
+</FONT></TD></TR></TABLE>
+
+<H3>CONNECTION_OFFSET</H3>
+<PRE>
+protected final int <B>CONNECTION_OFFSET</B></PRE>
+<DL><DD>Number of genes prior to beginning of the connections array.<DL><DD></DD></DL></DD>
+</DL>
+<DL></DL>
+<HR>
+
+<H3>x0</H3>
+<PRE>
+private Float <B>x0</B></PRE>
+<DL><DD>x-coordinate of the first Steiner point.<DL><DD></DD></DL></DD>
+</DL>
+<DL></DL>
+<HR>
+
+<H3>y0</H3>
+<PRE>
+private Float <B>y0</B></PRE>
+<DL><DD>y-coordinate of the first Steiner point.<DL><DD></DD></DL></DD>
+</DL>
+<DL></DL>
+<HR>
+
+<H3>x1</H3>
+<PRE>
+private Float <B>x1</B></PRE>
+<DL><DD>x-coordinate of the second Steiner point.<DL><DD></DD></DL></DD>
+</DL>
+<DL></DL>
+<HR>
+
+<H3>y1</H3>
+<PRE>
+private Float <B>y1</B></PRE>
+<DL><DD>y-coordinate of the second Steiner point.<DL><DD></DD></DL></DD>
+</DL>
+<DL></DL>
+<HR>
+
+<H3>connections</H3>
+<PRE>
+private Boolean[] <B>connections</B></PRE>
+<DL><DD>Bit array representing connections between the Steiner points and the points <code>(0, 0), (0, 1), (1, 0), (1, 1)</code>.<DL><DD></DD></DL></DD>
+</DL>
+<DL></DL>
+<HR>
+
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR BGCOLOR="#CCCCFF"><TD COLSPAN=1><FONT SIZE="+2">
+<B>Constructor Detail</B>
+</FONT></TD></TR></TABLE>
+
+<H3>SteinerPointChromosome</H3>
+<PRE>
+public <B>SteinerPointChromosome</B>()</PRE>
+<DL><DD>Creates a <code>SteinerPointChromsome</code> with randomly assigned values for the coordinates of the two steiner points and connections array. This constructor uses Math.random() to generate the random numbers used in creating the two steiner points and generating the connections array.<DL><DD></DD></DL></DD>
+</DL>
+<DL></DL>
+<HR>
+
+<H3>SteinerPointChromosome</H3>
+<PRE>
+public <B>SteinerPointChromosome</B>(float&nbsp;x0,
+                              float&nbsp;y0,
+                              float&nbsp;x1,
+                              float&nbsp;y1)</PRE>
+<DL><DD>Creates a <code>SteinerPointChromsome</code> using the specified float values to create the two steiner points and a randomly generating the connections array. This constructor uses Math.random() to generate the random numbers used in generating the connections array.<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Parameters:</B><DD><CODE>x0</CODE> - x-value of the first steiner point.</DD>
+<DD><CODE>y0</CODE> - y-value of the first steiner point.</DD>
+<DD><CODE>x1</CODE> - x-value of the second steiner point.</DD>
+<DD><CODE>y1</CODE> - y-value of the second steiner point.</DD>
+</DL>
+<HR>
+
+<H3>SteinerPointChromosome</H3>
+<PRE>
+public <B>SteinerPointChromosome</B>(float&nbsp;x0,
+                              float&nbsp;y0,
+                              float&nbsp;x1,
+                              float&nbsp;y1,
+                              boolean[]&nbsp;conn)</PRE>
+<DL><DD>Creates a <code>SteinerPointChromosome</code> using the specified float values to create the two steiner points and the specified boolean array to create the array of connections.<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Parameters:</B><DD><CODE>x0</CODE> - x-value of the first steiner point.</DD>
+<DD><CODE>y0</CODE> - y-value of the first steiner point.</DD>
+<DD><CODE>x1</CODE> - x-value of the second steiner point.</DD>
+<DD><CODE>y1</CODE> - y-value of the second steiner point.</DD>
+<DD><CODE>conn</CODE> - array representing the connections between the given steiner points and the points on the unit square.</DD>
+</DL>
+<HR>
+
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR BGCOLOR="#CCCCFF"><TD COLSPAN=1><FONT SIZE="+2">
+<B>Method Detail</B>
+</FONT></TD></TR></TABLE>
+
+<H3>setGene</H3>
+<PRE>
+public void <B>setGene</B>(int&nbsp;geneIndex,
+                    Object&nbsp;gene)</PRE>
+<DL><DD><DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Parameters:</B><DD><CODE>geneIndex</CODE> - </DD>
+<DD><CODE>gene</CODE> - </DD>
+</DL>
+<HR>
+
+<H3>length</H3>
+<PRE>
+public int <B>length</B>()</PRE>
+<DL><DD>Returns the number of genes in this chromosome.<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Returns:</B><DD>the number of genes.</DD>
+</DL>
+<HR>
+
+</BODY>
+</HTML>

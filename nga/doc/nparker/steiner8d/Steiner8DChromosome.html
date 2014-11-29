@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><!--JBuilder QuickDoc-->
+<HEAD>
+<TITLE>Class nparker.steiner8d.Steiner8DChromosome</TITLE><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+</HEAD>
+<BODY>
+
+<H2>
+<FONT SIZE="-1">nparker.steiner8d</FONT>
+<BR>Class Steiner8DChromosome</H2>
+<DL>
+<DT>public class <B>Steiner8DChromosome</B><DT>extends BitPatternChromosome
+</DL>
+<DL><DD><DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Version:</B><DD>1.0</DD>
+<DT><B>Author:</B><DD>Nathan Parker</DD>
+</DL>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR BGCOLOR="#CCCCFF"><TD COLSPAN=1><FONT SIZE="+2">
+<B>Field Detail</B>
+</FONT></TD></TR></TABLE>
+
+<H3>LENGTH</H3>
+<PRE>
+public static final int <B>LENGTH</B></PRE>
+<DL><DD>Maximum number of bits in this bit-wise chromosome.<DL><DD></DD></DL></DD>
+</DL>
+<DL></DL>
+<HR>
+
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR BGCOLOR="#CCCCFF"><TD COLSPAN=1><FONT SIZE="+2">
+<B>Constructor Detail</B>
+</FONT></TD></TR></TABLE>
+
+<H3>Steiner8DChromosome</H3>
+<PRE>
+public <B>Steiner8DChromosome</B>()</PRE>
+<DL><DD>Creates a new bit-wise chromosome which is tailored to solve the 8-point Steiner problem. The bit-wise chromosome has an internal length of 88 bits. This uses Java's random number generator in the <code>java.lang.Math</code> to determine the initial settings of each bit in the bit string and not the random number generator set in the <code>GeneticApplication</code> class in this package.<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>See Also:</B><DD>java.lang.Math#random()</DD>
+</DL>
+<HR>
+
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR BGCOLOR="#CCCCFF"><TD COLSPAN=1><FONT SIZE="+2">
+<B>Method Detail</B>
+</FONT></TD></TR></TABLE>
+
+<H3>getS1</H3>
+<PRE>
+public Point2D.Double <B>getS1</B>()</PRE>
+<DL><DD>Returns the first Steiner point represented by this chromosome. As far as the bit-wise representation is concerned, the first Steiner point concerns the bits between positions 0 through 40.<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Returns:</B><DD>the first Steiner point in this chromosome.</DD>
+</DL>
+<HR>
+
+<H3>getS2</H3>
+<PRE>
+public Point2D.Double <B>getS2</B>()</PRE>
+<DL><DD>Returns the second Steiner point represented by this chromosome. As far as the bit-wise representation is concerned, the second Steiner point concerns the bits between positions 40 through 80.<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Returns:</B><DD>the second Steiner point in this chromosome.</DD>
+</DL>
+<HR>
+
+<H3>toString</H3>
+<PRE>
+public String <B>toString</B>()</PRE>
+<DL><DD>Returns a <code>String</code> representation of this chromosome. This <code>String</code> representation is formatted to be read out as XML. The <code>String</code> contains the bit-wise representation of the chromosome, the generation, and the fitness value.<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Returns:</B><DD><code>String</code> representation of this chromosome.</DD>
+</DL>
+<HR>
+
+<H3>convertEncoding</H3>
+<PRE>
+private double <B>convertEncoding</B>(String&nbsp;bits)</PRE>
+<DL><DD>Returns the double number represented by an arbitrary string of bits in a <code>BitPatternChromosome</code>.<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Parameters:</B><DD><CODE>bits</CODE> - a string of bits from a <code>BitPatternChromosome</code>.</DD>
+<DT><B>Returns:</B><DD>the converted <code>double</code> value of the bits in a range from 0 to 1.</DD>
+</DL>
+<HR>
+
+</BODY>
+</HTML>

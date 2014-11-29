@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><!--JBuilder QuickDoc-->
+<HEAD>
+<TITLE>Class nparker.steiner8d.Steiner8DGeneticApp</TITLE><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+</HEAD>
+<BODY>
+
+<H2>
+<FONT SIZE="-1">nparker.steiner8d</FONT>
+<BR>Class Steiner8DGeneticApp</H2>
+<DL>
+<DT>public class <B>Steiner8DGeneticApp</B><DT>extends BaseGeneticApplication
+</DL>
+<DL><DD>Contains references to all of the different pieces that make up this genetic algorithm application. This is the container object used in solving the 8-point Steiner problem.<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Version:</B><DD>1.0</DD>
+<DT><B>Author:</B><DD>Nathan Parker</DD>
+</DL>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR BGCOLOR="#CCCCFF"><TD COLSPAN=1><FONT SIZE="+2">
+<B>Field Detail</B>
+</FONT></TD></TR></TABLE>
+
+<H3>MAX_TIMES_CONVERGENT</H3>
+<PRE>
+public static final int <B>MAX_TIMES_CONVERGENT</B></PRE>
+<DL><DD>The number of times we want to see the same best-to-date fitness value before considering the system convergent.<DL><DD></DD></DL></DD>
+</DL>
+<DL></DL>
+<HR>
+
+<H3>outputBuffer</H3>
+<PRE>
+private BufferedWriter <B>outputBuffer</B></PRE>
+<DL><DD>Buffer to route our output.<DL><DD></DD></DL></DD>
+</DL>
+<DL></DL>
+<HR>
+
+<H3>numTimesConvergent</H3>
+<PRE>
+private int <B>numTimesConvergent</B></PRE>
+<DL><DD>Tracks the number of times we have seen the same best-to-date fitness value.<DL><DD></DD></DL></DD>
+</DL>
+<DL></DL>
+<HR>
+
+<H3>bestFitnessToDate</H3>
+<PRE>
+private double <B>bestFitnessToDate</B></PRE>
+<DL><DD>Fitness value of the best member of the population to date.<DL><DD></DD></DL></DD>
+</DL>
+<DL></DL>
+<HR>
+
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR BGCOLOR="#CCCCFF"><TD COLSPAN=1><FONT SIZE="+2">
+<B>Constructor Detail</B>
+</FONT></TD></TR></TABLE>
+
+<H3>Steiner8DGeneticApp</H3>
+<PRE>
+public <B>Steiner8DGeneticApp</B>()</PRE>
+<DL><DD>Creates a new 8-point Steiner problem container. In addition to creating the container, it opens the output file for writing.<DL><DD></DD></DL></DD>
+</DL>
+<DL></DL>
+<HR>
+
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR BGCOLOR="#CCCCFF"><TD COLSPAN=1><FONT SIZE="+2">
+<B>Method Detail</B>
+</FONT></TD></TR></TABLE>
+
+<H3>getOutputFile</H3>
+<PRE>
+public BufferedWriter <B>getOutputFile</B>()</PRE>
+<DL><DD>Returns a reference to the output file for this genetic algorithm application.<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Returns:</B><DD>a reference to the output buffer for this GA application.</DD>
+</DL>
+<HR>
+
+<H3>init</H3>
+<PRE>
+public void <B>init</B>()</PRE>
+<DL><DD>Performs necessary initialization of this application prior to the main algorithm being ran. This method generates the 8 random points within the unit square that the Steiner points are trying to create a minimal spanning tree with. These points are then placed in the fitness function and then written out to both standard output and the output file.<DL><DD></DD></DL></DD>
+</DL>
+<DL></DL>
+<HR>
+
+<H3>isConvergent</H3>
+<PRE>
+public boolean <B>isConvergent</B>()</PRE>
+<DL><DD>Determines if this application is convergent. Here we define convergent to be dependent upon whether the fitness value of the best member to date has changed in the last <code>MAX_TIMES_CONVERGENT</code> number of iterations or not. If the best fitness value has not changed in that number of iterations, we will say the system has converged to a solution.<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Returns:</B><DD><code>true</code> if the best fitness value has not changed in the last <code>MAX_TIMES_CONVERGENT</code>; <code>false</code> otherwise.</DD>
+</DL>
+<HR>
+
+</BODY>
+</HTML>
