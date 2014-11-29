@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="Kaggle Santa">
+    <version position="right"/>    
+    <bannerLeft>
+        <src>images/maven-inside.png</src>
+        <href>http://maven.apache.org</href>
+    </bannerLeft>
+    <bannerRight>
+        <src>images/maven-inside.png</src>
+        <href>http://maven.apache.org</href>
+    </bannerRight>
+    <body>    
+        <menu name="Project">
+		<!--
+            <item name="Introduction" href="index.html"/>
+          -->
+        </menu>
+        <menu ref="reports"/>
+    </body>
+</project>
