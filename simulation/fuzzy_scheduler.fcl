@@ -1,0 +1,35 @@
+/*
+         AUTHOR: Matt Parker
+           DATE: 30 December 2014
+    DESCRIPTION:
+
+*/
+
+FUNCTION_BLOCK toy_scheduler
+
+VAR_INPUT
+    working : REAL;
+    time_to_complete :  REAL;
+    sanctioned_hours :  REAL;
+    unsanctioned_hours : REAL;
+END_VAR
+
+VAR_OUTPUT
+    score: REAL;
+END_VAR
+
+FUZZIFY score
+
+
+END_FUZZIFY
+
+
+RULEBLOCK scheduling_rules
+    AND : MIN;	// Use 'min' for 'and'
+    ACT : MIN;	// Use 'min' activation method
+    ACCU : MAX;	// Use 'max' accumulation method
+
+END_RULEBLOCK
+
+
+END_FUNCTION_BLOCK
