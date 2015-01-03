@@ -45,7 +45,7 @@
             <groupId>jfuzzylogic</groupId>
             <artifactId>jfuzzylogic</artifactId>
             <version>1.0</version>
-            <systemPath>${basedir}\lib\jfuzzylogic-core.jar</systemPath>
+            <systemPath>${basedir}/lib/jfuzzylogic-core.jar</systemPath>
             <scope>system</scope>
         </dependency>
         <dependency>
