@@ -11,9 +11,10 @@ import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
 import org.apache.commons.io.FileUtils;
+import parker.event.EventManager;
 import parker.kaggle.santa.simulator.ArrivalDateFormat;
 import parker.kaggle.santa.simulator.Elf;
-import parker.kaggle.santa.simulator.Toy;
+import parker.kaggle.santa.simulator.events.BuildToy;
 import parker.kaggle.santa.simulator.ToyScheduleParser;
 
 /**
@@ -34,9 +35,9 @@ public class Simulator {
         
         DateFormat df = new ArrivalDateFormat();      
         BufferedWriter results = null;
-        TreeMap<Integer, Elf> elves = new TreeMap<Integer,Elf>();
+        TreeMap<Integer, Elf> elfPool = new TreeMap<Integer,Elf>();
         Properties simulatorProperties = new Properties();
-        Set<Toy> toys = new TreeSet<Toy>();
+        Set<BuildToy> toys = new TreeSet<BuildToy>();
         
         try {
 
@@ -45,16 +46,21 @@ public class Simulator {
             int numberOfElves = Integer.parseInt( simulatorProperties.getProperty(ELVES) );
             
             for( int i=0; i<numberOfElves; i++ ){
-                elves.put( i, new Elf(i) );
+                elfPool.put( i, new Elf(i) );
             }
             
                 //Build schedule.
             List<String> toyScheduleItems = FileUtils.readLines( new File( args[0], "utf-8" ) ); 
             toyScheduleItems.remove(0);  // remove the file header.
             
+            EventManager manager = EventManager.getInstance();
+            
             for ( String config : toyScheduleItems ){
-                Toy toy = ToyScheduleParser.parse(config);
+                BuildToy buildToyEvent = ToyScheduleParser.parse(config);
+                manager.add( buildToyEvent );
             }
+            
+            FuzzyScheduler scheduler = new FuzzyScheduler( elfPool, manager );
             
             results = new BufferedWriter( new FileWriter( args[1] ) );
             

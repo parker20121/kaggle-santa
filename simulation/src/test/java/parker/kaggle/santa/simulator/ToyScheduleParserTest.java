@@ -1,5 +1,6 @@
 package parker.kaggle.santa.simulator;
 
+import parker.kaggle.santa.simulator.events.BuildToy;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import org.junit.Assert;
@@ -15,7 +16,7 @@ public class ToyScheduleParserTest {
     public void testParser() throws Exception {
         
         String toyConfig = "2,2014 1 1 0 1,5";
-        Toy toy = ToyScheduleParser.parse( toyConfig );
+        BuildToy toy = ToyScheduleParser.parse( toyConfig );
         
         Calendar cal = new GregorianCalendar();
         cal.set( Calendar.YEAR, 2014 );

@@ -1,22 +1,27 @@
-package parker.kaggle.santa.simulator;
+package parker.kaggle.santa.simulator.events;
 
 import java.util.Date;
+import parker.event.Event;
 
 /**
- *
+ * Event signifying a toy is to built at a future time,
+ * and the toy's building parameters.
+ * 
  * @author Matt Parker
  */
-public class Toy implements Comparable {
+public class BuildToy extends Event {
 
+    /** The toy's identifier from the input file. */
     int id;
+    
+    /** The time the toy can be built. */
     Date arrivalTime;
+    
+    /** The time it will take to build the toy, in minutes? */
     int duration;
     
-    public Toy(){
-        
-    }
-    
-    public Toy( int id, Date arrivalTime, int duration ){
+    public BuildToy( int id, Date arrivalTime, int duration ){
+        super( arrivalTime );
         this.id = id;
         this.arrivalTime = arrivalTime;
         this.duration = duration;
@@ -46,9 +51,4 @@ public class Toy implements Comparable {
         this.duration = duration;
     }
 
-    public int compareTo(Object o) {
-        Date time = (Date)o;
-        return arrivalTime.compareTo(time);
-    }
-   
 }

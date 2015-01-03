@@ -1,6 +1,8 @@
 package parker.kaggle.santa.simulator;
 
+import parker.kaggle.santa.simulator.events.BuildToy;
 import java.text.DateFormat;
+import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -14,24 +16,25 @@ public class ToyScheduleParser {
     private static final Pattern pattern = Pattern.compile("(\\d+),(\\w+),(\\d+)");
     private static final DateFormat df = new ArrivalDateFormat();
     
-    public static Toy parse( String lineItem ) throws Exception {
+    public static BuildToy parse( String lineItem ) throws Exception {
         
         Matcher m = pattern.matcher(lineItem);
         
         if ( m.find() ){
-            Toy toy = new Toy();
-            toy.setId( Integer.parseInt( m.group(1) ) );
-            toy.setArrivalTime( df.parse( m.group(2) ) );
-            toy.setDuration( Integer.parseInt( m.group(3) ) );
             
-            System.out.println("g1: " + m.group(1) );
-            System.out.println("g2: " + m.group(2) );
-            System.out.println("g3: " + m.group(3) );
+            int id = Integer.parseInt( m.group(1) );
+            Date arrivalTime = df.parse( m.group(2) );
+            int duration = Integer.parseInt( m.group(3) );
             
-            return toy;
+            System.out.print("id: " + m.group(1) );
+            System.out.print(" arrivalTime: " + m.group(2) );
+            System.out.println(" duration: " + m.group(3) );
+            
+            return new BuildToy( id, arrivalTime, duration );
         }
         
-        return null;
+        throw new Exception("Coudn't parse config: " + lineItem );
+        
     }
     
 }

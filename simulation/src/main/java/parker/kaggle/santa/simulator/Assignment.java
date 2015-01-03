@@ -1,5 +1,7 @@
 package parker.kaggle.santa.simulator;
 
+import parker.kaggle.santa.simulator.events.BuildToy;
+
 /**
  *
  * @author Matt Parker
@@ -7,10 +9,10 @@ package parker.kaggle.santa.simulator;
 public class Assignment {
 
     Elf elf;
-    Toy toy;
+    BuildToy toy;
     long startTime;
     
-    public Assignment( Elf elf, Toy toy, long startTime ){
+    public Assignment( Elf elf, BuildToy toy, long startTime ){
         this.elf = elf;
         this.toy = toy;
         this.startTime = startTime;
@@ -24,11 +26,11 @@ public class Assignment {
         this.elf = elf;
     }
 
-    public Toy getToy() {
+    public BuildToy getToy() {
         return toy;
     }
 
-    public void setToy(Toy toy) {
+    public void setToy(BuildToy toy) {
         this.toy = toy;
     }
 

@@ -1,5 +1,6 @@
 package parker.kaggle.santa.simulator;
 
+import parker.kaggle.santa.simulator.events.BuildToy;
 import java.sql.Timestamp;
 
 /**
@@ -17,7 +18,7 @@ public class Elf {
     boolean building = false;
     
     Timestamp buildStarts;
-    Toy toy;
+    BuildToy toy;
     
     public Elf(int id){
         this.id = id;
@@ -39,7 +40,7 @@ public class Elf {
         this.productivityRating = this.productivityRating * Math.pow(1.02,santionedHoursWorked) * Math.pow(0.9, unsanctionedHoursWorked);
     }
     
-    public double calcTimeToBuildToy( Toy toy ){
+    public double calcTimeToBuildToy( BuildToy toy ){
         return toy.getDuration() / productivityRating;
     }
     
@@ -47,7 +48,7 @@ public class Elf {
         return building;
     }
     
-    public Timestamp assignToy( Timestamp buildStarts, Toy toy ){
+    public Timestamp assignToy( Timestamp buildStarts, BuildToy toy ){
         
         this.buildStarts = buildStarts;
         this.toy = toy;
