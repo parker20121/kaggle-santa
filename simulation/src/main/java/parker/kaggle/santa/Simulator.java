@@ -12,6 +12,7 @@ import java.util.TreeMap;
 import java.util.TreeSet;
 import org.apache.commons.io.FileUtils;
 import parker.event.EventManager;
+import parker.kaggle.santa.scheduler.FuzzyScheduler;
 import parker.kaggle.santa.simulator.ArrivalDateFormat;
 import parker.kaggle.santa.simulator.Elf;
 import parker.kaggle.santa.simulator.events.BuildToy;
@@ -28,8 +29,8 @@ public class Simulator {
          
     public static void main ( String args[] ){
     
-        if ( args.length != 2 ){
-            System.out.println("usage: java parker.kaggle.santa.Simulator [toy schedule] [results file] ");
+        if ( args.length != 3 ){
+            System.out.println("usage: java parker.kaggle.santa.Simulator [toy schedule] [fuzzy config file] [results file] ");
             System.exit(0);
         } 
         
@@ -61,8 +62,9 @@ public class Simulator {
             }
             
             FuzzyScheduler scheduler = new FuzzyScheduler( elfPool, manager );
+            scheduler.init(args[1] );
             
-            results = new BufferedWriter( new FileWriter( args[1] ) );
+            results = new BufferedWriter( new FileWriter( args[2] ) );
             
         } catch (Exception e) {
             System.out.println( e.toString() );

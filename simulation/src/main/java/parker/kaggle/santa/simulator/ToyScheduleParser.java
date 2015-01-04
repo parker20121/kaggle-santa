@@ -23,7 +23,7 @@ public class ToyScheduleParser {
         if ( m.find() ){
             
             int id = Integer.parseInt( m.group(1) );
-            Date arrivalTime = df.parse( m.group(2) );
+            long arrivalTime = df.parse( m.group(2) ).getTime();
             int duration = Integer.parseInt( m.group(3) );
             
             System.out.print("id: " + m.group(1) );

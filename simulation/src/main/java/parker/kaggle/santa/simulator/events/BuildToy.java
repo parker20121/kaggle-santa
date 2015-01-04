@@ -1,5 +1,6 @@
 package parker.kaggle.santa.simulator.events;
 
+import java.sql.Timestamp;
 import java.util.Date;
 import parker.event.Event;
 
@@ -15,15 +16,15 @@ public class BuildToy extends Event {
     int id;
     
     /** The time the toy can be built. */
-    Date arrivalTime;
+    Timestamp arrivalTime;
     
     /** The time it will take to build the toy, in minutes? */
     int duration;
     
-    public BuildToy( int id, Date arrivalTime, int duration ){
+    public BuildToy( int id, long arrivalTime, int duration ){
         super( arrivalTime );
         this.id = id;
-        this.arrivalTime = arrivalTime;
+        this.arrivalTime = new Timestamp(arrivalTime);
         this.duration = duration;
     }
 
@@ -35,11 +36,11 @@ public class BuildToy extends Event {
         this.id = id;
     }
 
-    public Date getArrivalTime() {
+    public Timestamp getArrivalTime() {
         return arrivalTime;
     }
 
-    public void setArrivalTime(Date arrivalTime) {
+    public void setArrivalTime(Timestamp arrivalTime) {
         this.arrivalTime = arrivalTime;
     }
 
